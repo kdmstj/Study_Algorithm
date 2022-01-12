@@ -11,14 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-//스프링이 올라올때 service로써 memberService를 등록함.
-@Transactional
+
 public class MemberService {
 
     private final MemberRepository memberRepository;
 
-    //di(dependency injection)
-    @Autowired
+
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -29,12 +27,11 @@ public class MemberService {
      */
     public Long join(Member member){
         //같은 이름이 있는 중복 회원x
-
         //중복회원 검증
         validateDuplicateMember(member);
-
         memberRepository.save(member);
         return member.getId();
+
     }
 
     private void validateDuplicateMember(Member member) {
@@ -48,7 +45,10 @@ public class MemberService {
      * 전체회원 조회
      */
     public List<Member> findMembers(){
+
         return memberRepository.findAll();
+
+
     }
 
     public Optional<Member> findOne(Long memberId){

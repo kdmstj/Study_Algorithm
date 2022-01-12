@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
 
-@Controller
 //스프링을 관리하는 것임
 public class MemberController {
 

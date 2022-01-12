@@ -1,12 +1,10 @@
 package hello.hellospring.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@Controller
 public class HelloController {
 
     /*hello라는 url에 매칭이 되되록 함.*/
@@ -17,9 +15,9 @@ public class HelloController {
         /*templates hello.html을 실행시켜라*/
         return "hello";
     }
-
     @GetMapping("hello-mvc")
     public String helloMvc(@RequestParam( "name")String name, Model model){
+        //
         model.addAttribute("name",name);
         return "hello-template";
     }
