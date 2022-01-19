@@ -9,14 +9,15 @@ public class ANS10991 {
 
         int num = sc.nextInt();
 
-        for(int i = 0 ; i < num ; i++){
-            for(int k = 0 ; k < i; k++){
+        for(int i = 1 ; i < num+1 ; i++){
+            for(int k = num-i ; k > 0  ; k--){
                 System.out.print(" ");
             }
-            for(int m = 0 ; m < (2*num)-1 ; m++){
+            for(int m = 1; m <i+1 ; m++ ){
                 System.out.print("* ");
             }
             System.out.println();
         }
+
     }
 }
