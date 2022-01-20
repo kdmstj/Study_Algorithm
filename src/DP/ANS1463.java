@@ -13,7 +13,7 @@ public class ANS1463 {
 
         int num = sc.nextInt();
 
-        //
+        //새로운 배열 선언
         dp = new Integer[num + 1];
         dp[0] = dp[1] = 0;
 
@@ -25,6 +25,7 @@ public class ANS1463 {
 
     static int recur(int N){
 
+        //초기화전 dp는 null값을 가진다.
         if(dp[N] == null){
             if(N % 6 == 0){
                 dp[N] = Math.min(recur(N-1), Math.min(recur(N/3), recur(N/2)))+1;
