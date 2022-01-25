@@ -23,6 +23,25 @@ public class ANS11054 {
         }
 
 
+        for(int i = 1; i < N ; i++){
+            for(int j = 0; j < i ; j++){
+                if(A[i] < A[j] && dp[i] < dp[j]){
+                    dp[i] = dp[j] +1;
+                    for(int k = j+1 ; k < i ; k++){
+                        if (A[k] < A[j] && A[k] > A[i]){
+                            dp[i] += 1;
+                        }
+                    }
+                }
+            }
+        }
+
+        int max = -1;
+        for(int i = 0 ; i < N; i++){
+            max = max < dp[i] ? dp[i] : max;
+        }
+        System.out.println(max);
+
 
 
 
