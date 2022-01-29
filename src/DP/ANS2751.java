@@ -1,33 +1,30 @@
 package DP;
 
-import java.util.Scanner;
+import java.io.*;
+import java.util.Arrays;
+
 
 public class ANS2751 {
 
     static int N;
-    static int[] dp,arr;
+    static Integer[] arr;
 
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        N = sc.nextInt();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        N = Integer.parseInt(br.readLine());
 
-        arr = new int[N];
-        dp = new int[N];
+        arr = new Integer[N];
         for(int i = 0 ; i < N; i++){
-            arr[i] = sc.nextInt();
+            arr[i] = Integer.parseInt(br.readLine());
         }
 
-        dp[0] = arr[0];
-        for(int i = 1 ; i < N; i++){
-            for(int j = 1 ; j < i; j++){
-                if(arr[i] > dp[i-j]){
-                    dp[i-j+1] = arr[i];
-                }
-                else{//arr[i] < dp[i-j]
+        Arrays.sort(arr);
 
-                }
-            }
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0 ; i < N; i++){
+            sb.append(arr[i] +"\n");
         }
 
+        System.out.println(sb);
     }
 }
