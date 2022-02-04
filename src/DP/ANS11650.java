@@ -28,6 +28,9 @@ public class ANS11650 {
         }
 
 
+
+        //o[0] => x좌표, o[1] => y좌표
+        //x좌표가 같으면 y좌표가 증가하는 순서대로 나열함.
         Arrays.sort(dp, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
