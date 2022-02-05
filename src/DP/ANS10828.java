@@ -12,32 +12,32 @@ public class ANS10828 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
-        String[] dp = new String[N];
+        List<String> list = new ArrayList<String>();
         int index = 0;
 
         for(int i = 0 ; i < N; i++){
             StringTokenizer st = new StringTokenizer(br.readLine());
             String str = st.nextToken();
             if(str.equals("push")){
-                dp[index] = st.nextToken();
+                list.add(st.nextToken());
                 index++;
             }
             else if(str.equals("pop")){
-                if(index == -1){
+                if(list.isEmpty()){
                     System.out.println("-1");
                 }
                 else{
-                    System.out.println(dp[index]);
-                    dp[index] = null;
+                    System.out.println(list.get(index-1));
+                    list.remove(index-1);
                     index--;
                 }
 
             }
             else if(str.equals("size")){
-                System.out.println(dp.length);
+                System.out.println(list.size());
             }
             else if(str.equals("empty")){
-                if(index == -1){
+                if(list.isEmpty()){
                     System.out.println("1");
                 }
                 else{
@@ -45,11 +45,11 @@ public class ANS10828 {
                 }
             }
             else if(str.equals("top")){
-                if(index == -1){
+                if(list.isEmpty()){
                     System.out.println("-1");
                 }
                 else{
-                    System.out.println(dp[index]);
+                    System.out.println(list.get(index-1));
                 }
 
             }
