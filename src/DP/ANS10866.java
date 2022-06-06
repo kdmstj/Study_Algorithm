@@ -18,8 +18,10 @@ public class ANS10866 {
             StringTokenizer st = new StringTokenizer(br.readLine());
             String s = st.nextToken();
             if(s.equals("push_front")){
-
-
+                for(int j = front; j < deque.size(); j++){
+                    int temp = deque.get(j);
+                    deque.add(j+1,temp);
+                }
             }else if(s.equals("push_back")){
 
             }else if(s.equals("pop_front")){
