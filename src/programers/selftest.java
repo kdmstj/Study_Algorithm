@@ -1,4 +1,4 @@
-package Boostcamp;
+package programers;
 
 import java.util.Arrays;
 import java.util.Scanner;

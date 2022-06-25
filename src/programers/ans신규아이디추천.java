@@ -1,4 +1,4 @@
-package Boostcamp;
+package programers;
 
 public class ans신규아이디추천 {
 
